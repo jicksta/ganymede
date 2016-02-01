@@ -21,7 +21,7 @@ gulp.task('elm', ['elm-init'], function(){
 
 gulp.task('sass', function () {
   gulp.
-    src('./sass/**/*.scss').
+    src(['./bower_components/bulma/css/bulma.css', './sass/**/*.scss']).
     pipe(sass().on('error', sass.logError)).
     pipe(gulp.dest('./build/css'));
 });
