@@ -13,7 +13,7 @@ gulp.task('elm-init', elm.init);
 gulp.task('elm', ['elm-init'], function(){
    return gulp.
             src('src/*.elm').
-            pipe(elm()).
+            pipe(elm().on('error', function(e) { console.error(e.message) })).
             pipe(gulp.dest('build/'));
 });
 
